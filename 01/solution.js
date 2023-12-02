@@ -59,4 +59,5 @@ function parseDigits(digArr) {
 }
 
 /** PART 2 */
+console.log("PART 2")
 console.log(parsed.map(row => getCalibrationsWithText(row)).reduce((a, b) => a + b))
