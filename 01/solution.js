@@ -30,7 +30,7 @@ console.log(reduced)
 /** PART 2 */
 
 function getCalibrationsWithText(str) {
-    const d = str.match(/\d|(one)|(two)|(three)|(four)|(five)|(six)|(seven)|(eight)|(nine)/g)
+    const d = str.match(/\d|one|two|three|four|five|six|seven|eight|nine/g)
     const dp = parseDigits(d)
     if (dp.length === 1) {
         return parseInt(dp[0] + dp[0])
