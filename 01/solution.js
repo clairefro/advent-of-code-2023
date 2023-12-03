@@ -15,7 +15,7 @@ function getCalibration(str) {
         parseInt(d[0] + d[d.length - 1])
 }
 
-const calibrations = parsed.map(row => getCalibration(row))
+const calibrations = parsed.map(getCalibration)
 
 const reduced = calibrations.reduce((a, b) => a + b)
 
