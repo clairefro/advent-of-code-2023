@@ -15,9 +15,9 @@ function getCalibration(str) {
         parseInt(d[0] + d[d.length - 1])
 }
 
-const calibrations = parsed.map(getCalibration)
+const c = parsed.map(getCalibration)
 
-const reduced = calibrations.reduce((a, b) => a + b)
+const reduced = c.reduce((a, b) => a + b)
 
 console.log("PART 1")
 console.log(reduced)
