@@ -12,11 +12,8 @@ function getCalibration(str) {
     const d = str.match(/\d/g)
     if (d.length === 1) {
         return parseInt(d[0] + d[0])
-    } else if (d.length > 1) {
-        return parseInt(d[0] + d[d.length - 1])
     } else {
-        /** shouldn't happen */
-        return `none: ${str}`
+        return parseInt(d[0] + d[d.length - 1])
     }
 }
 
@@ -34,10 +31,8 @@ function getCalibrationsWithText(str) {
     const dp = parseDigits(d)
     if (dp.length === 1) {
         return parseInt(dp[0] + dp[0])
-    } else if (dp.length > 1) {
-        return parseInt(dp[0] + dp[dp.length - 1])
     } else {
-        return `none: ${str}`
+        return parseInt(dp[0] + dp[dp.length - 1])
     }
 }
 
