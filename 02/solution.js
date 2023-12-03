@@ -78,16 +78,12 @@ function minViableCubes(gameStr) {
                 if (!minViable[col]) {
                     minViable[col] = val
                 } else {
-                    if (minViable[col] > val) {
+                    if (minViable[col] < val) {
                         minViable[col] = val
                     }
                 }
             })
     })
-    console.log(gameStr)
-    console.log(minViable)
-    console.log({ power: power(minViable) })
-    console.log(" ")
     return minViable
 }
 
