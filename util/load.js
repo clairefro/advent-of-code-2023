@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 
 /** For loading inputs from file to string */
 const load = (_path) => {
