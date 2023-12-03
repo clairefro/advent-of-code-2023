@@ -84,10 +84,10 @@ function minViableCubes(gameStr) {
                 }
             })
     })
-    // console.log(gameStr)
-    // console.log(minViable)
-    // console.log({ power: power(minViable) })
-    // console.log(" ")
+    console.log(gameStr)
+    console.log(minViable)
+    console.log({ power: power(minViable) })
+    console.log(" ")
     return minViable
 }
 
