@@ -29,11 +29,9 @@ console.log(reduced)
 function getCalibrationsWithText(str) {
     const d = str.match(/\d|one|two|three|four|five|six|seven|eight|nine/g)
     const dp = parseDigits(d)
-    if (dp.length === 1) {
-        return parseInt(dp[0] + dp[0])
-    } else {
-        return parseInt(dp[0] + dp[dp.length - 1])
-    }
+    return dp.length === 1 ?
+        parseInt(dp[0] + dp[0]) :
+        parseInt(dp[0] + dp[dp.length - 1])
 }
 
 const digitMap = {
@@ -53,6 +51,5 @@ function parseDigits(digArr) {
     return digArr.map(d => Object.keys(digitMap).includes(d) ? digitMap[d] : d)
 }
 
-/** PART 2 */
 console.log("PART 2")
 console.log(parsed.map(row => getCalibrationsWithText(row)).reduce((a, b) => a + b))
