@@ -24,15 +24,7 @@ console.log(reduced)
 
 /** PART 2 */
 
-function getCalibrationsWithText(str) {
-    const d = str.match(/\d|one|two|three|four|five|six|seven|eight|nine/g)
-    const dp = parseDigits(d)
-    return dp.length === 1 ?
-        parseInt(dp[0] + dp[0]) :
-        parseInt(dp[0] + dp[dp.length - 1])
-}
-
-const digitMap = {
+const map = {
     one: "1",
     two: "2",
     three: "3",
@@ -45,8 +37,18 @@ const digitMap = {
     zero: "0"
 }
 
+const re = new RegExp(`\\d|${Object.keys(map).join("|")}`, "g")
+
+function getCalibrationsWithText(str) {
+    const d = str.match(re)
+    const dp = parseDigits(d)
+    return dp.length === 1 ?
+        parseInt(dp[0] + dp[0]) :
+        parseInt(dp[0] + dp[dp.length - 1])
+}
+
 function parseDigits(digArr) {
-    return digArr.map(d => Object.keys(digitMap).includes(d) ? digitMap[d] : d)
+    return digArr.map(d => Object.keys(map).includes(d) ? map[d] : d)
 }
 
 console.log("PART 2")
