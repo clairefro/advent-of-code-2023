@@ -10,11 +10,9 @@ const parsed = raw.split("\n")
 
 function getCalibration(str) {
     const d = str.match(/\d/g)
-    if (d.length === 1) {
-        return parseInt(d[0] + d[0])
-    } else {
-        return parseInt(d[0] + d[d.length - 1])
-    }
+    return d.length === 1 ?
+        parseInt(d[0] + d[0]) :
+        parseInt(d[0] + d[d.length - 1])
 }
 
 const calibrations = parsed.map(row => getCalibration(row))
